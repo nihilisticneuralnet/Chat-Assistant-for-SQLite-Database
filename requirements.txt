@@ -1,0 +1,5 @@
+streamlit
+sqlalchemy
+smolagents
+dotenv
+huggingface_hub
