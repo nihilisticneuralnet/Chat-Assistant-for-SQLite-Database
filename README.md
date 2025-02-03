@@ -1,6 +1,6 @@
 # Chat-Assistant-for-SQLite-Database
 
-## Outputs
+## Output
 
 <img src="img/1.png" /> 
 
