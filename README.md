@@ -1,5 +1,24 @@
 # Chat Assistant for SQLite Database
 
+This project is a Chat Assistant for SQLite Database built using Streamlit, SQLAlchemy, and SmolAgents. It allows users to interact with an in-memory SQLite database via natural language queries. The assistant translates user queries into SQL, executes them on the database, and returns the results.
+
+## How It Works
+
+- **Database Initialization**: The project uses an in-memory SQLite database, creating two tables: employees and departments.
+
+- **Data Population**: Predefined sample data is inserted into both tables.
+
+- **Natural Language Query Processing**:
+
+   - Users enter questions about the database (e.g., "Who has the highest salary?").
+
+   - A **CodeAgent** powered by **Qwen2.5-72B-Instruct** converts the question into an SQL query.
+
+   - The query is executed using SQLAlchemy, and the results are displayed to the user.
+
+- **Streamlit UI**: The frontend provides an interactive interface where users can input queries, get results, and explore database schemas and sample questions.
+
+
 ## Installation
 
 Follow these steps to set up the project:
@@ -28,3 +47,25 @@ Ensure you have all the necessary libraries installed before running these comma
 
 <img src="img/1.png" /> 
 
+
+## Known Limitations & Improvements
+
+### Limitations
+
+- The database is in-memory, meaning data is lost when the app is restarted.
+
+- The assistant may misinterpret complex queries.
+
+- It relies on Qwen2.5-72B-Instruct, which requires an internet connection.
+
+### Suggested Improvements
+
+- Use a persistent database (e.g., PostgreSQL, MySQL) for data retention.
+
+- Improve query translation accuracy using additional fine-tuned LLMs.
+
+- Enhance error handling for malformed queries.
+
+- Add user authentication for security and access control.
+
+- Use classic RAG Model instead of Multi-AI Agents using Faiss vector database to store database locally
