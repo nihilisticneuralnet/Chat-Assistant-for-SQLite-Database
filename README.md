@@ -31,7 +31,7 @@ Follow these steps to set up the project:
    ```plaintext
    HUGGINGFACE_TOKEN="your_huggingface_api"
    ```
-   Replace `your_huggingface_api` with your actual API keys.
+   Replace `your_huggingface_api` with your actual API token.
 
 4. **Run the Application**: Finally, run the application using Streamlit by executing `python -m streamlit run app.py`.
 
