@@ -7,11 +7,11 @@ from dotenv import load_dotenv
 import os
 from huggingface_hub import login
 
-# login(token="HUGGINGFACE_TOKEN")
+login(token="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")
 
-load_dotenv()
-hf_token = os.getenv("HUGGINGFACE_TOKEN")
-login(token=hf_token)
+# load_dotenv()
+# hf_token = os.getenv("HUGGINGFACE_TOKEN")
+# login(token=hf_token)
 
 engine = create_engine("sqlite:///:memory:")
 metadata_obj = MetaData()
