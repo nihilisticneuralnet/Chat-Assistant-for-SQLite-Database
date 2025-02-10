@@ -53,13 +53,22 @@ with engine.begin() as connection:
 @tool
 def sql_engine(query: str) -> str:
     """
-    Executes an SQL query and returns the result as a string.
-
-    Args:
-        query (str): The SQL query to execute.
-
-    Returns:
-        str: The result of the query.
+    Allows you to perform SQL queries on the table. Beware that this tool's output is a string representation of the execution output.
+    It can use the following tables:
+    
+    Table 'employees':
+    Columns:
+      - id: INTEGER
+      - name: VARCHAR(50)
+      - department: VARCHAR(50)
+      - salary: FLOAT
+      - hire_date: DATE
+    
+    Table 'departments':
+    Columns:
+      - id: INTEGER
+      - name: VARCHAR(50)
+      - manager: VARCHAR(50)
     """
     output = ""
     with engine.connect() as con:
