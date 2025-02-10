@@ -53,7 +53,8 @@ with engine.begin() as connection:
 @tool
 def sql_engine(query: str) -> str:
     """
-    Allows you to perform SQL queries on the table. Beware that this tool's output is a string representation of the execution output.
+    Allows you to perform SQL queries on the table. Returns a string representation of the result. Beware that this tool's output is a string representation of the execution output.
+    
     It can use the following tables:
     
     Table 'employees':
@@ -69,6 +70,9 @@ def sql_engine(query: str) -> str:
       - id: INTEGER
       - name: VARCHAR(50)
       - manager: VARCHAR(50)
+
+    Args:
+        query: The query to perform. This should be correct SQL.
     """
     output = ""
     with engine.connect() as con:
