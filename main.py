@@ -50,23 +50,24 @@ with engine.begin() as connection:
     connection.execute(insert(employees), employee_rows)
     connection.execute(insert(departments), department_rows)
 
-# @tool
-# def sql_engine(query: str) -> str:
-#     output = ""
-#     with engine.connect() as con:
-#         rows = con.execute(text(query))
-#         for row in rows:
-#             output += "\n" + str(row)
-#     return output
-
 @tool
 def sql_engine(query: str) -> str:
+    """
+    Executes an SQL query and returns the result as a string.
+
+    Args:
+        query (str): The SQL query to execute.
+
+    Returns:
+        str: The result of the query.
+    """
     output = ""
     with engine.connect() as con:
         rows = con.execute(text(query))
         for row in rows:
             output += "\n" + str(row)
     return output
+
 def get_table_description():
     description = """Allows you to perform SQL queries on the table. Beware that this tool's output is a string representation of the execution output.
 It can use the following tables:"""
