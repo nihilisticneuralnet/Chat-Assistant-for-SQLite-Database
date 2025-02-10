@@ -1,3 +1,5 @@
+pip install --no-deps pipreqs
+pip install yarg==0.1.9 docopt==0.6.2
 streamlit
 sqlalchemy
 smolagents
